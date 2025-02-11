@@ -1,0 +1,17 @@
+name: Pipeline 
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  testing_the_server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking the code
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm install
+      - name: Run the server
+        run: npm run dev
