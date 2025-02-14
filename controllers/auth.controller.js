@@ -90,7 +90,20 @@ export const signIn = async (req, res, next) => {
     }
 }
 
-export const signOut = async (req, res) => {}
+export const signOut = async (req, res) => {
+    try {
+        res.status(200).json({
+            success: true,
+            message: 'Logout successfully '
+        })
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: 'Error during logout',
+            error: error.message
+        })
+    }
+}
 
 
 

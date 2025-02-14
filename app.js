@@ -6,12 +6,14 @@ import subscriptionRouter from './routes/subscription.routes.js';
 import connectDB from './database/database.js';
 import errorMiddleware from './middleware/error.middleware.js';
 import cookieParser from 'cookie-parser';
+import arcjetMiddleware from './middleware/arcjet.middleware.js';
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(arcjetMiddleware)
 
 app.get('/', (req, res) => {
     res.send('welcome to the subscription tracker');
