@@ -7,7 +7,7 @@ subscriptionRouter.get('/', (req, res) => res.send({title: 'Get all subscription
 
 subscriptionRouter.get('/:id', (req, res) => res.send({title: 'Get subscription details'}))
 
-subscriptionRouter.post('/', (req, res) => res.send({title: 'create a new subscription'}))
+subscriptionRouter.post('/',(req, res) => res.send({title: 'create a new subscription'}))
 
 subscriptionRouter.put('/:id', (req, res) => res.send({title: 'update subscription details'}))
 
