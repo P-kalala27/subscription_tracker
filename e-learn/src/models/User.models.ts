@@ -7,7 +7,8 @@ interface User{
     password:String;
     role: 'student' | 'teacher';
     isMFAEnable: boolean;
-    mfaSecret: String
+    mfaSecret: String,
+    isAdmin: boolean;
 }
 
 
@@ -37,6 +38,10 @@ const userSchema = new Schema<User>({
     },
     mfaSecret: {
         type:String
+    },
+    isAdmin:{
+        type:Boolean,
+        default: false
     }
 })
 

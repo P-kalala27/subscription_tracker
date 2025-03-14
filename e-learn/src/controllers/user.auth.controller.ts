@@ -35,8 +35,9 @@ export const registerUser = async (req: Request, res:Response) => {
 
 
 
-export const loginUser = async  (req: Request, res:Response) => {
+export const loginUser = async (req: Request, res:Response) => {
     try {
+        //recuperation des données de connexion
         const {email, password } = req.body
         const existingUser = await UserModels.findOne({email})
 
